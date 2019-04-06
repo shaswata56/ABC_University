@@ -30,11 +30,11 @@ class _LoginPageState extends State<LoginPage> {
     final email = TextFormField(
 
       style: TextStyle(color: Colors.white),
-    validator: (value) {
-      if (value.isEmpty) {
-        return 'Please enter some text';
-      }
-    },
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter some text';
+        }
+      },
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
       initialValue: null,
@@ -82,14 +82,38 @@ class _LoginPageState extends State<LoginPage> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-    if (_formKey.currentState.validate()) {
-      emailController = email.controller;
-      passwordController = password.controller;
-      if(email.controller.text == 'pathagar@gmail.com' && password.controller.text == '12345')
-        {
-          Navigator.of(context).pushNamed(Feed.tag);
-        }
-    }
+          if (_formKey.currentState.validate()) {
+            emailController = email.controller;
+            passwordController = password.controller;
+            if(email.controller.text == 'teacher@gmail.com' && password.controller.text == '12345')
+            {
+                Navigator.of(context).pushNamed(Feed.tag);
+            }
+            else if(email.controller.text == 'student@gmail.com' && password.controller.text == '12345')
+            {
+              Navigator.of(context).pushNamed(Feed.tag);
+            } else {
+              return showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  // return object of type Dialog
+                  return AlertDialog(
+                    title: new Text("Email or Password not matched!!!"),
+                    content: new Text("Please Try Again."),
+                    actions: <Widget>[
+                      // usually buttons at the bottom of the dialog
+                      new FlatButton(
+                        child: new Text("Close"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
+          }
         },
         padding: EdgeInsets.all(12),
         color: Colors.deepPurpleAccent,
@@ -125,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
             decoration: new BoxDecoration(
               image: new DecorationImage(
                 colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.7), BlendMode.darken),
-                image: new AssetImage("assets/bg.png"),
+                image: new AssetImage("assets/iict.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -149,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                 createLabel
               ],
             ),
-                )
+            )
           )
         ],
       ),
