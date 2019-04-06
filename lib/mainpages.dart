@@ -36,7 +36,7 @@ class  _MainPageState extends State<mainpage> {
         },
         padding: EdgeInsets.all(12),
         color: Colors.deepPurpleAccent,
-        child: Text('2nd year', style: TextStyle(color: Colors.white)),
+        child: Text('2d year', style: TextStyle(color: Colors.white)),
       ),
     );
     final thirdyear= Padding(
