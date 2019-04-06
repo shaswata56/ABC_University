@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Pathagar/donate.dart';
-import 'package:Pathagar/search.dart';
+import 'package:Pathagar/notification.dart';
+import 'package:Pathagar/curriculum.dart';
 import 'package:Pathagar/profile.dart';
 
 void main() => runApp(new Feed());
@@ -74,7 +74,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         children: [
           new Search("Search Books"),
           new Profile("Profile"),
-          new Donate(),
+          new Notifications("Notifications"),
         ],
         onPageChanged: onPageChanged,
         controller: _pageController,
@@ -88,11 +88,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
           items: [
             new BottomNavigationBarItem(
                 icon: new Icon(
-                  Icons.search,
+                  Icons.announcement,
                   color: const Color(0xFFFFFFFF),
                 ),
                 title: new Text(
-                  "Search Books",
+                  "Curriculum",
                   style: new TextStyle(
                     color: const Color(0xFFFFFFFF),
                   ),
@@ -110,11 +110,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 )),
             new BottomNavigationBarItem(
                 icon: new Icon(
-                  Icons.share,
+                  Icons.notifications,
                   color: const Color(0xFFFFFFFF),
                 ),
                 title: new Text(
-                  "Donate Books",
+                  "Notifications",
                   style: new TextStyle(
                     color: const Color(0xFFFFFFFF),
                   ),
