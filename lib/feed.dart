@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Pathagar/donate.dart';
-import 'package:Pathagar/search.dart';
+import 'package:Pathagar/mainpages.dart';
 import 'package:Pathagar/profile.dart';
 
 void main() => runApp(new Feed());
@@ -72,7 +72,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       ),
       body: new PageView(
         children: [
-          new Search("Search Books"),
+          new mainpage(),
           new Profile("Profile"),
           new Donate(),
         ],
@@ -92,7 +92,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   color: const Color(0xFFFFFFFF),
                 ),
                 title: new Text(
-                  "Search Books",
+                  "Years",
                   style: new TextStyle(
                     color: const Color(0xFFFFFFFF),
                   ),
