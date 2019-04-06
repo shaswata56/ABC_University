@@ -1,0 +1,22 @@
+name: Pathagar
+description: A book sharing app.
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.0
+  dio: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
+    - assets/bg.png
+  fonts:
+      - family: Nunito
+        fonts:
+          - asset: assets/Nunito.ttf
